@@ -9,18 +9,18 @@
     <script>
       window.addEvent('domready', function () {
           Achievements.init(document.id('achievements'));
-          Achievements.show({text: 'You did it!',
-                             label: 'Custom label',
-                             url: 'http://www.google.com'});
+          Achievements.show({ text: 'You did it!',
+                              label: 'Custom label',
+                              url: 'http://www.google.com' });
           Achievements.show();
-          Achievements.show({text: 'Oups, I did it again...'});
-          Achievements.show({text: 'Oups, I did it again... \
+          Achievements.show({ text: 'Oups, I did it again...' });
+          Achievements.show({ text: 'Oups, I did it again... \
                              and again and again and again \
-                             and agains and again'});
+                             and agains and again' });
 
           $$('li').addEvent('click', function(event) {
               event.stop();
-              Achievements.show({text: this.get('text')});
+              Achievements.show({ text: this.get('text') });
           });
       });
     </script>
@@ -39,13 +39,23 @@
       </ul>
     </div>
     <div class='right'>
-      <p>Lorem ipsum dolor sit amet, virtute necessitatibus mea ea, at ridens detraxit sit, eam nostrum eloquentiam interpretaris at. Constituto eloquentiam vim ea, mei ea scaevola tincidunt, no ius illum admodum. Usu an dicta mundi, est no dico nonumy. An ubique rationibus mel. Eum prima illum ne, est ut ubique offendit, usu dictas fierent an. Velit copiosae eam in, graece postea dolores ei mei. Admodum nominavi per ne, ut dico illum option eos.</p>
+      <p>Lorem ipsum dolor sit amet, virtute necessitatibus mea ea, at ridens detraxit sit,
+eam nostrum eloquentiam interpretaris at. Constituto eloquentiam vim ea, mei ea scaevola
+tincidunt, no ius illum admodum. Usu an dicta mundi, est no dico nonumy. An ubique rationibus
+mel. Eum prima illum ne, est ut ubique offendit, usu dictas fierent an. Velit copiosae eam in,
+graece postea dolores ei mei. Admodum nominavi per ne, ut dico illum option eos.</p>
 
-<p>Menandri contentiones duo ne, his et tation iriure liberavisse, has eu fabulas propriae deseruisse. Id per accumsan sententiae. Nam id error eligendi, has harum convenire id. Vim in elitr fuisset salutandi, mei an sonet possim recteque, dico viris accusam at quo. Ne vix graeci evertitur, legere indoctum theophrastus sed eu, quo falli liber euripidis cu.</p
+<p>Menandri contentiones duo ne, his et tation iriure liberavisse, has eu fabulas propriae
+deseruisse. Id per accumsan sententiae. Nam id error eligendi, has harum convenire id. Vim
+in elitr fuisset salutandi, mei an sonet possim recteque, dico viris accusam at quo. Ne vix
+graeci evertitur, legere indoctum theophrastus sed eu, quo falli liber euripidis cu.</p
 
-<p>Placerat apeirian per ea. Etiam iuvaret habemus te eum. Ne putant definitionem mea. Usu nusquam accusamus ne, inani molestie pri te, in duo meis latine.</p>
+<p>Placerat apeirian per ea. Etiam iuvaret habemus te eum. Ne putant definitionem mea.
+Usu nusquam accusamus ne, inani molestie pri te, in duo meis latine.</p>
 
-<p>His debet definiebas ei, eum et nostrud gloriatur. Sale vocent eleifend mel ex. Odio nusquam menandri an usu, nec an principes interesset, id vim harum patrioque definitiones. Ad prima contentiones vix. Per mucius vocibus eloquentiam te, diam error dicit cu eos.</p>
+<p>His debet definiebas ei, eum et nostrud gloriatur. Sale vocent eleifend mel ex.
+Odio nusquam menandri an usu, nec an principes interesset, id vim harum patrioque definitiones.
+Ad prima contentiones vix. Per mucius vocibus eloquentiam te, diam error dicit cu eos.</p>
     </div>
     <div id='achievements' class='achievement_container'></div>
   </body>

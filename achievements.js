@@ -32,15 +32,15 @@ var Achievements = (function() {
         el.get('tween').setOptions(opts).start(1).start(0);
     }
     var show = function(opts) {
-        if(typeof opts === 'undefined') opts = {};
+        if(typeof opts === 'undefined') opts = { };
         var text = opts.text || 'Lorem Ipsum Dolor';
         var label = opts.label || 'Achievement earned!';
         var url = opts.url;
 
-        var div = new Element('div', {styles:{opacity: 0}});
-        new Element('div', {text: label}).inject(div);
-        new Element('div', {text: text}).inject(div);
-        if(typeof opts.url !== 'undefined') {
+        var div = new Element('div', { styles: { opacity: 0 } });
+        new Element('div', { text: label }).inject(div);
+        new Element('div', { text: text }).inject(div);
+        if(typeof url !== 'undefined') {
             div.addClass('clickable');
             div.addEvent('click', function() {
                 window.location = url;
