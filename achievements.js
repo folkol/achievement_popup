@@ -49,7 +49,7 @@ var Achievements = (function() {
         div.inject(container);
 
         var opts = {
-            duration: 500,
+            duration: 1000,
             onComplete: function() {
                 fadeoutAndDestroy(div);
             }
