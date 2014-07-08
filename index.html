@@ -9,14 +9,14 @@
     <script>
       window.addEvent('domready', function () {
           Achievements.init(document.id('achievements'));
-          Achievements.show({ text: 'You did it!',
-                              label: 'Custom label',
-                              url: 'http://www.google.com' });
-          Achievements.show();
-          Achievements.show({ text: 'Oups, I did it again...' });
-          Achievements.show({ text: 'Oups, I did it again... \
-                             and again and again and again \
-                             and agains and again' });
+          setTimeout(function() {
+              Achievements.display({ text: 'You did it!',
+                                     label: 'Custom label',
+                                     url: 'http://www.google.com' });
+              Achievements.display();
+              Achievements.display({ text: 'Oups, I did it again...' });
+              Achievements.display({ text: 'Oups, I did it again... and again and again and again and agains and again' });
+          }, 500);
 
           $$('li').addEvent('click', function(event) {
               event.stop();

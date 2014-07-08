@@ -31,7 +31,7 @@ var Achievements = (function() {
         };
         el.get('tween').setOptions(opts).start(1).start(0);
     }
-    var show = function(opts) {
+    var display = function(opts) {
         if(typeof opts === 'undefined') opts = { };
         var text = opts.text || 'Lorem Ipsum Dolor';
         var label = opts.label || 'Achievement earned!';
@@ -59,6 +59,6 @@ var Achievements = (function() {
 
     return {
         init: init,
-        show: show
+        display: display
     };
 })();
