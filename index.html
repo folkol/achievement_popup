@@ -9,19 +9,16 @@
     <script>
       window.addEvent('domready', function () {
           Achievements.init(document.id('achievements'));
-          Achievements.show('You did it!');
-          Achievements.show('Oups, I did it again...');
-          Achievements.show('Oups, I did it again... \
-                             And again and again and again \
+          Achievements.show({text: 'You did it!', label: 'Custom label'});
+          Achievements.show();
+          Achievements.show({text: 'Oups, I did it again...'});
+          Achievements.show({text: 'Oups, I did it again... \
                              and again and again and again \
-                             and again and again and again \
-                             and again and again and again \
-                             and agains and again');
-      
+                             and agains and again'});
+
           $$('li').addEvent('click', function(event) {
               event.stop();
-              this.highlight();
-              Achievements.show(this.get('text'));
+              Achievements.show({text: this.get('text')});
           });
       });
     </script>
@@ -32,7 +29,7 @@
     </div>
     <div class='left'>
       <ul>
-        <li>Virtute </li>
+        <li>Virtute</li>
         <li>Necessitatibus</li>
         <li>Velit copiosae</li>
         <li>Odio nusquam</li>

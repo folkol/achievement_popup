@@ -1,26 +1,27 @@
 var Achievements = (function() {
+
     var container = null;
 
     var init = function(el) {
-        container = $(el);
+        container = document.id(el);
         container.addEvents({
             mouseenter: cancelFadeouts,
             mouseleave: beginFadeouts
         });
     }
-    var cancelFadeouts = function (event) {
-        $$('div.achievement_container > div').each(function(el) {
+    var cancelFadeouts = function(event) {
+        container.getChildren().each(function(el) {
             el.get('tween').cancel().set('opacity', 1);
         });
     }
-    var beginFadeouts = function (event) {
-        $$('div.achievement_container > div').each(function(el) {
+    var beginFadeouts = function(event) {
+        container.getChildren().each(function(el) {
             fadeoutAndDestroy(el);
         });
     }
     var fadeoutAndDestroy = function(el) {
         el.get('tween').removeEvents();
-        var opts =  {
+        var opts = {
             link: 'chain',
             property: 'opacity',
             duration: 3000,
@@ -30,19 +31,23 @@ var Achievements = (function() {
         };
         el.get('tween').setOptions(opts).start(1).start(0);
     }
-    var show = function (text) {
-        var el = new Element('div', { styles: {opacity: 0}});
-        var top = new Element('div', { text: 'Achievement earned!' }).inject(el);
-        var bottom = new Element('div', {'text': text}).inject(el);
-        el.inject(container);
+    var show = function(opts) {
+        if(typeof opts === 'undefined') opts = {};
+        var text = opts.text || 'Lorem Ipsum Dolor';
+        var label = opts.label || 'Achievement earned!';
+
+        var div = new Element('div', {styles:{opacity: 0}});
+        new Element('div', {text: label}).inject(div);
+        new Element('div', {text: text}).inject(div);
+        div.inject(container);
 
         var opts = {
             duration: 500,
             onComplete: function() {
-                fadeoutAndDestroy(el);
+                fadeoutAndDestroy(div);
             }
         };
-        el.set('tween', opts).fade('in');
+        div.set('tween', opts).fade('in');
     }
 
     return {
