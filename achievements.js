@@ -35,10 +35,17 @@ var Achievements = (function() {
         if(typeof opts === 'undefined') opts = {};
         var text = opts.text || 'Lorem Ipsum Dolor';
         var label = opts.label || 'Achievement earned!';
+        var url = opts.url;
 
         var div = new Element('div', {styles:{opacity: 0}});
         new Element('div', {text: label}).inject(div);
         new Element('div', {text: text}).inject(div);
+        if(typeof opts.url !== 'undefined') {
+            div.addClass('clickable');
+            div.addEvent('click', function() {
+                window.location = url;
+            });
+        }
         div.inject(container);
 
         var opts = {

@@ -17,8 +17,8 @@ li {
    text-decoration: underline;
    color: #0af;
 }
-li:hover:after {
-   content: ' -';
+li:hover {
+   color: white;
 }
 div.achievement_container {
           width: 300px;
@@ -38,6 +38,9 @@ div.achievement_container > div {
           text-align: center;
           text-shadow: 0px 0px 5px black;
           box-shadow: 0px 0px 20px #0af;
+}
+div.achievement_container > div.clickable {
+          cursor: pointer;
 }
 div.achievement_container > div :first-child {
           border: black solid 1px;
