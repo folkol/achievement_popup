@@ -5,8 +5,26 @@
     <title>title</title>
     <link rel="stylesheet" href="style.css">
     <script type='text/javascript' src='mootools-core-1.4.5.js'></script>
-    <script type='text/javascript' src='mootools-more-1.4.0.1.js'></script>
-    <script src="script.js"></script>
+    <script src="achievements.js"></script>
+    <script>
+      window.addEvent('domready', function () {
+          Achievements.init(document.id('achievements'));
+          Achievements.show('You did it!');
+          Achievements.show('Oups, I did it again...');
+          Achievements.show('Oups, I did it again... \
+                             And again and again and again \
+                             and again and again and again \
+                             and again and again and again \
+                             and again and again and again \
+                             and agains and again');
+      
+          $$('li').addEvent('click', function(event) {
+              event.stop();
+              this.highlight();
+              Achievements.show(this.get('text'));
+          });
+      });
+    </script>
   </head>
   <body>
     <div class='top'>
