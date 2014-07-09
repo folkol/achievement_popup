@@ -26,6 +26,9 @@ div.achievement_container {
     bottom: 0px;
     right: 0px;
 }
+div.achievement_container div.backdrop {
+    background: white;
+}
 div.achievement_container > div {
     border: white solid 2px;
 
@@ -37,12 +40,16 @@ div.achievement_container > div {
     margin: 10px;
     text-align: center;
     text-shadow: 0px 0px 5px black;
-    box-shadow: 0px 0px 20px #0af;
 }
-div.achievement_container > div.clickable {
+div.achievement_container div.backdrop > div {
+    background: #232527;
+    display: block;
+    text-align: center;
+}
+div.achievement_container div.backdrop > div.clickable {
     cursor: pointer;
 }
-div.achievement_container > div :first-child {
+div.achievement_container div.backdrop > div :first-child {
     border: black solid 1px;
     font-size: 75%;
     font-weight: bold;
@@ -59,7 +66,7 @@ div.achievement_container > div :first-child {
     background: linear-gradient(135deg,  rgba(149,149,149,1) 0%,rgba(13,13,13,1) 46%,rgba(1,1,1,1) 50%,rgba(10,10,10,1) 53%,rgba(78,78,78,1) 76%,rgba(56,56,56,1) 87%,rgba(27,27,27,1) 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', endColorstr='#1b1b1b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
-div.achievement_container > div :not(:first-child) {
+div.achievement_container div.backdrop > div :not(:first-child) {
     border-top: none;
     font-size: 125%;
     padding: 3px;

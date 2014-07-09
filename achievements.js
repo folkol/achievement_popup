@@ -46,12 +46,15 @@ var Achievements = (function() {
                 window.location = url;
             });
         }
-        div.inject(container);
+        var backdrop = new Element('div', { class: 'backdrop' });
+        div.inject(backdrop);
+        backdrop.inject(container);
 
         var opts = {
-            duration: 1000,
+            duration: 800,
+            transition: Fx.Transitions.Quint.easeIn,
             onComplete: function() {
-                fadeoutAndDestroy(div);
+                fadeoutAndDestroy(backdrop);
             }
         };
         div.set('tween', opts).fade('in');
