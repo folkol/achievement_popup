@@ -37,7 +37,7 @@ var Achievements = (function() {
         var label = opts.label || 'Achievement earned!';
         var url = opts.url;
 
-        var div = new Element('div', { styles: { opacity: 0 } });
+        var div = new Element('div', { styles: { opacity: 0.2 } });
         new Element('div', { text: label }).inject(div);
         new Element('div', { text: text }).inject(div);
         if(typeof url !== 'undefined') {
@@ -52,7 +52,7 @@ var Achievements = (function() {
 
         var opts = {
             duration: 800,
-            transition: Fx.Transitions.Quint.easeIn,
+            transition: Fx.Transitions.Quad.easeIn,
             onComplete: function() {
                 fadeoutAndDestroy(backdrop);
             }
